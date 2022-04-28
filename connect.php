@@ -1,15 +1,15 @@
 <?php
-    $ketnoi['host'] = "localhost"; //Tên server, nếu dùng hosting free thì cần thay đổi
-    $ketnoi['username'] = "root"; //Tên sử dụng Database
-    $ketnoi['password'] = "";//Mật khẩu của tên sử dụng Database
-	$ketnoi['dbname'] = "final_data"; //Đây là tên của Database
+    $connect['host'] = "localhost";
+    $connect['username'] = "root";
+    $connect['password'] = "";
+	$connect['dbname'] = "final_data";
     $conn = mysqli_connect(
-        "{$ketnoi['host']}",
-        "{$ketnoi['username']}",
-        "{$ketnoi['password']}")
+        "{$connect['host']}",
+        "{$connect['username']}",
+        "{$connect['password']}")
     or
-        die("Không thể kết nối database");
-    @mysqli_select_db($conn, "{$ketnoi['dbname']}") 
+        die("Cant connect to the database");
+    @mysqli_select_db($conn, "{$connect['dbname']}") 
     or
-        die("Không thể chọn database");
+        die("No database exist");
 ?>
