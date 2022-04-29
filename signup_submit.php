@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href="final.css" rel="stylesheet">
+    </head>
+<body>
+<div class="form-tt">
 <?php
  
     if (!isset($_POST['txtUsername'])){
@@ -16,7 +25,7 @@
 
     if (!$username || !$password || !$email)
     {
-        echo "Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a>";
+        echo "Please type in your information <a href='javascript: history.go(-1)'>Go Back</a>";
         exit;
     }
           
@@ -25,40 +34,40 @@
           
 
     /*if (mysqli_num_rows(mysqli_query("SELECT username FROM member WHERE username='$username'")) > 0){
-        echo "Tên đăng nhập này đã có người dùng. Vui lòng chọn tên đăng nhập khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
+        echo "Username already exists. Please change it. <a href='javascript: history.go(-1)'>Go Back</a>";
         exit;
     }
           
-    //Kiểm tra email có đúng định dạng hay không
+
     if (!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$", $email))
     {
-        echo "Email này không hợp lệ. Vui long nhập email khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
+        echo "Email not correct. Please change your email. <a href='javascript: history.go(-1)'>Go Back</a>";
         exit;
     }
           
-    //Kiểm tra email đã có người dùng chưa
+
     if (mysqli_num_rows(mysqli_query("SELECT email FROM member WHERE email='$email'")) > 0)
     {
-        echo "Email này đã có người dùng. Vui lòng chọn Email khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
+        echo "Email already in the system. Please choose another email. <a href='javascript: history.go(-1)'>Go back</a>";
         exit;
     }
-    //Kiểm tra dạng nhập vào của ngày sinh
-    if (!eregi("^[0-9]+/[0-9]+/[0-9]{2,4}", $birthday))
-    {
-            echo "Ngày tháng năm sinh không hợp lệ. Vui long nhập lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
-            exit;
-        }
+
           */
-    //Lưu thông tin thành viên vào bảng
 
 $sql = "INSERT INTO member(username, password, email) 
 VALUES('$username', '$password', '$email')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New Album successfully saved";
+    echo "User Create Succesfully!!!!";
 } else {
-    echo "Error: New Album failed to be saved";
+    echo "Failed to create user";
 }
 $conn->close();
 
 ?>
+<br>
+<br>
+<a href='login.php' title='login'>Log In</a>
+</div>
+</body>
+</html>

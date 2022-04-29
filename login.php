@@ -3,74 +3,72 @@
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href="final.css" rel="stylesheet">
     </head>
     <body>
-	<?php
+<?php
 
 session_start();
  
 
 header('Content-Type: text/html; charset=UTF-8');
  
+$servername = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "final_data";
+$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 
-if (isset($_POST['login'])) 
+if (isset($_POST['submit'])) 
 {
-
-    include('connect.php');
      
-
-    $username = ($_POST['txtUsername']);
-    $password = ($_POST['txtPassword']);
+    $username = mysqli_real_escape_string($conn,$_POST['txtUsername']);
+	$password = mysqli_real_escape_string($conn,$_POST['txtPassword']); 
      
-
     if (!$username || !$password) {
         echo "Please type your name and password";
         exit;
     }
      
-
     $password = md5($password);
 
-    $query = mysqli_query("SELECT username, password FROM member WHERE username='$username'");
-    if (mysqli_num_rows($query) == 0) {
-        echo "Username not exist";
-        exit;
-    }
-     
-    $row = mysqli_fetch_array($query);
-     
-    if ($password != $row['password']) {
-        echo "Wrong password!!!";
-        exit;
-    }
-     
-    $_SESSION['username'] = $username;
-    echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/'>Về trang chủ</a>";
-    die();
+	$sql = "SELECT count(*) as cntUser FROM member WHERE username = '$username' and password = '$password'";
+	$result = mysqli_query($conn,$sql);
+	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+	$active = $row['active'];
+      
+	$count = $row['cntUser'];
+      
+      // If result matched $myusername and $mypassword, table row must be 1 row
+	if($count > 0){
+		$_SESSION['login_user'] = $username;
+		if($_POST['buyer'] == 1){
+			header("Location:buyer.php");
+		}
+		elseif($_POST['seller'] == 1){
+			header("Location:seller.php");
+		}
+		elseif($_POST['admin'] == 1){
+			header("Location:admin.php");
+		}
+	}
+	else{
+		$error = "Your Login Name or Password is invalid";
+	}
 }
 ?>
-        <form action='login.php?do=login' method='POST'>
-            <table cellpadding='0' cellspacing='0' border='1'>
-                <tr>
-                    <td>
-                        Username:
-                    </td>
-                    <td>
-                        <input type='text' name='txtUsername' />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Password:
-                    </td>
-                    <td>
-                        <input type='password' name='txtPassword' />
-                    </td>
-                </tr>
-            </table>
-            <input type='submit' value='Log In' />
-            <a href='signup.php' title='signup'>Sign Up</a>
-        </form>
-    </body>
+<div class="form-tt">
+<h2>Log in</h2>
+<form action='login.php?do=login' method='POST'>
+	<input type="text" name="txtUsername" placeholder="Username" />
+	<input type="password" name="txtPassword" placeholder="Password" />
+	<input type="checkbox" id="checkbox" name="buyer" value="1"><label class="checkbox-text">Buyer</label>
+	<input type="checkbox" id="checkbox" name="seller" value="1"><label class="checkbox-text">Seller</label>
+	<input type="checkbox" id="checkbox" name="admin" value="1"><label class="checkbox-text">Admin</label>
+	<input type="submit" name="submit" value="Sign In" class="submit1"/>
+	<a href='signup.php' title='signup'>Sign Up</a>
+</form>
+</div>
+</body>
 	
 </html>
