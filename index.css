@@ -1,8 +1,31 @@
-body{
-	background-image: url("Pics/house.jpeg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-color: #6e9236;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.active {
+  background-color: #4CAF50;
+}
+.search{
+	margin-top: 15px;
+}
+/* Thay đổi màu liên kết thành #111 (black) khi di chuột */
+li a:hover {
+  background-color: #111;
 }
 
 .form-tt {
