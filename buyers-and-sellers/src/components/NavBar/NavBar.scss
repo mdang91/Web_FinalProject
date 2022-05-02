@@ -1,0 +1,71 @@
+@import '../../shared/styles/variable.scss';
+
+nav {
+    width: 100%;
+    background-color: $primary-color;
+    padding: 16px 10px;
+
+    .nav-container {
+        display: flex;
+        align-items: center;
+        .nav-left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            .img-logo-brand {
+                width: 120px;
+                padding: 0 10px;
+            }
+        
+            a {
+                display: flex;
+                align-items: center;
+                color: $white-color;
+                font-size: $normal-size;
+                font-weight: $heavy-weight;
+                padding: 5px 12px;
+                border-radius: 5px;
+    
+                &:hover {
+                    background-color: $primary-lighten-color;
+                    transition: .3s;
+                }
+            }
+        }
+
+        .nav-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .welcome-message {
+                display: flex;
+                align-items: center;
+                color: $white-color;
+                font-size: $normal-size;
+                font-weight: $heavy-weight;
+                padding: 5px 12px;
+                border-radius: 5px;
+            }
+
+            .logout-option {
+                display: flex;
+                align-items: center;
+                color: $white-color;
+                font-size: $normal-size;
+                font-weight: $heavy-weight;
+                padding: 5px 12px;
+                border-radius: 5px;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $primary-lighten-color;
+                    transition: .3s;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+@import './variable';
+@import './animation';
+
+* {
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+a, u {
+    text-decoration: none;
+}
+
+/* ---------- INPUT ---------- */
+.input-text {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid $grey-border-color;
+    font-size: $normal-size;
+
+    &:focus {
+        outline: none;
+    }
+    &.err {
+        border: 1px solid $error-color;
+        transition: border 500ms;
+    }
+}
+
+.err-text {
+    color: $error-color;
+    font-style: italic;
+    font-size: $small-size;
+    font-weight: $big-weight;
+    padding: 0 0 0 20px;
+    animation: fade-in 500ms ease-in-out;
+}
+
+/* ---------- BUTTON ---------- */
+.btn {
+    padding: 14px 20px;
+    margin : 8px 0;
+    border-radius: 10px;
+    font-size: $normal-size;
+    font-weight: $heavy-weight;
+    border: none;
+    cursor: pointer;
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: $disabled-color;
+    }
+    &:disabled:hover {
+        background-color: $disabled-color;
+    }
+}
+
+.btn-primary {
+    color: $white-color;
+    background-color: $primary-color;
+    transition: 200ms;
+    &:hover {
+        background-color: $primary-darken-color;
+    }
+}
+
+.btn-secondary {
+    color: $white-color;
+    background-color: $secondary-color;
+    transition: 200ms;
+    &:hover {
+        background-color: $secondary-darken-color;
+    }
+}
+

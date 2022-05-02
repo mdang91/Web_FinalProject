@@ -1,0 +1,188 @@
+@import '../../shared/styles/variable.scss';
+
+.banner-introduction-container {
+    display: flex;
+    width: 100%;
+    padding: 32px;
+    background-color: $primary-lighten-color;
+    box-shadow: 0 50px 50px 0 $grey-box-shadow;
+
+     .left-container {
+         flex: 2;
+
+        .banner-intro-img {
+            width: 75%;
+        }
+     }
+
+     .right-container {
+         flex: 1;
+         margin: auto 0;
+
+         .banner-intro-title {
+             font-size: $super-size;
+             color: $white-color;
+             font-weight: $heavy-weight;
+             padding-bottom: 20px;
+             text-align: center;
+         }
+
+         .banner-intro-description {
+             font-size: $huge-size;
+             color: $white-color;
+             font-weight: $big-weight;
+             text-align: center;
+         }
+     }
+}
+
+.company-introduction-container {
+    padding: 70px 0;
+
+    .company-intro-title {
+        font-size: $super-size;
+        color: $primary-color;
+        text-align: center;
+        font-weight: $bold-weight;
+    }
+
+    .company-intro-description {
+        font-size: $large-size;
+        color: $primary-color;
+        text-align: center;
+        font-weight: $normal-weight;
+        padding: 24px 50vh;
+        padding-top: 24px;
+    }
+ 
+    .company-intro-img {
+        width: 100%;
+    }
+}
+
+.service-container {
+    display: flex;
+    flex-direction: column;
+    padding: 36px;
+    padding-top: 10px;
+
+    .service-header {
+        color: $primary-color;
+        font-size: $super-size;
+        font-weight: $bold-weight;
+        text-align: center;
+        padding: 36px;
+    }
+
+    .service-card-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        .service-card {
+            width: 33.33%;
+            flex: 0.3;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px 0 $grey-box-shadow;
+    
+            .service-img-container {
+                width: 100%;
+                padding: 20px;
+    
+                .service-img {
+                    width: 100%;
+                    min-height: 350px;
+                    max-height: 350px;
+                    border-radius: 10px;
+                }
+    
+                .service-title {
+                    color: $primary-color;
+                    font-size: $huge-size;
+                    font-weight: $heavy-weight;
+                    text-align: center;
+                    padding: 12px;
+                }
+
+                .service-description {
+                    color: $primary-color;
+                    font-size: $normal-size;
+                    font-weight: $big-weight;
+                    text-align: center;
+                    padding-bottom: 36px;
+                }
+            }
+        }
+    }
+}
+
+.why-choose-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+
+    .why-choose-header {
+        color: $primary-color;
+        font-size: $super-size;
+        font-weight: $bold-weight;
+        text-align: center;
+        padding: 36px;
+    }
+
+    .reason-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: $primary-color;
+        padding: 36px;
+
+        .reason-card {
+            width: 33.33%;
+            flex: 0.3;
+
+            .reason-icon {
+                width: 100%;
+                color: $secondary-color;
+                font-size: $massive-size;
+                text-align: center;
+            }
+    
+            .reason-title {
+                color: $secondary-color;
+                font-size: $huge-size;
+                font-weight: $heavy-weight;
+                text-align: center;
+                padding: 12px;
+            }
+    
+            .reason-description {
+                color: $secondary-color;
+                font-size: $normal-size;
+                font-weight: $big-weight;
+                text-align: center;
+                padding-bottom: 36px;
+            }
+        }
+    }
+}
+
+.join-us-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: $primary-darken-color;
+    padding: 36px;
+
+    .join-us-title {
+        color: $white-color;
+        font-size: $super-size;
+        font-weight: $bold-weight;
+        text-align: center;
+        padding: 36px;
+    }
+
+    .join-btn {
+        width: 50vh;
+        font-size: $huge-size;
+    }
+}

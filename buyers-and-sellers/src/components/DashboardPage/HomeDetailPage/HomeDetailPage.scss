@@ -1,0 +1,105 @@
+@import '../../../shared/styles/variable.scss';
+
+.home-detail-container {
+    width: 100%;
+    margin: auto;
+    padding: 36px;
+
+    .page-title {
+        padding: 36px;
+    }
+
+    .home-not-found {
+        width: 100%;
+        text-align: center;
+        font-size: $huge-size;
+        color: $grey-border-color;
+    }
+
+    .home-info-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+        .home-info-img-container {
+            width: 100%;
+            height: 100%;
+            flex: 1;
+
+            .home-info-img {
+                width: 100%;
+                padding: 36px;
+            }
+        }
+
+        .home-info-detail-container {
+            flex: 1;
+            padding: 36px;
+            .detail-row {
+                display: flex;
+                padding: 4px 0;
+
+                .detail-label {
+                    font-size: $normal-size;
+                    font-weight: $heavy-weight;
+                }
+
+                .detail-value {
+                    font-size: $normal-size;
+                    font-weight: $big-weight;
+                }
+            }
+        }
+    }
+
+    .section-title {
+        text-align: center;
+    }
+
+    .action-btn-container {
+        display: flex;
+        justify-content: space-evenly;
+
+        .buy-btn {
+            color: $white-color;
+            background-color: $success-color;
+            transition: 200ms;
+            &:hover {
+                background-color: $success-darken-color;
+            }
+        }
+
+        .edit-btn {
+            color: $white-color;
+            background-color: $warning-color;
+            transition: 200ms;
+            &:hover {
+                background-color: $warning-darken-color;
+            }
+        }
+
+        .delete-btn {
+            color: $white-color;
+            background-color: $error-color;
+            transition: 200ms;
+            &:hover {
+                background-color: $error-darken-color;
+            }
+        }
+
+        .cart-btn {
+            color: $white-color;
+            background-color: $info-color;
+            transition: 200ms;
+            &:hover {
+                background-color: $info-darken-color;
+            }
+        }
+
+        .buy-btn, .edit-btn, .delete-btn, .cart-btn {
+            .icon-btn {
+                font-size: $huge-size;
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@import '../../../shared/styles/variable.scss';
+
+.page-title {
+    padding: 36px;
+}
+
+.btn-add-user {
+    margin: 36px !important;
+}
+
+.user-not-found {
+    width: 100%;
+    text-align: center;
+    font-size: $huge-size;
+    color: $grey-border-color;
+}
+
+.user-table-container {
+    width: 100%;
+    padding: 36px;
+
+    .user-table {
+        width: 100%;
+
+        .table-head-cell {
+            border: 3px solid $grey-theme-color;
+            padding: 12px;
+        }
+
+        .table-cell {
+            text-align: center;
+            border: 3px solid $grey-theme-color;
+            padding: 12px;
+
+            .action-btn {
+                margin-right: 10px;
+
+                .action-icon {
+                    color: $white-color;
+                    font-size: $normal-size;
+                }
+            }
+        }
+    }
+}

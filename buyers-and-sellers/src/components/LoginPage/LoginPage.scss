@@ -1,0 +1,88 @@
+@import '../../shared/styles/variable.scss';
+
+.login-form-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+
+    .login-form {
+        min-width: 420px;
+        border-radius: 10px;
+        box-shadow: 0 50px 50px 0 $grey-box-shadow;
+        margin: auto;
+        padding: 12px;
+        border-left: 3px solid $primary-color;
+        border-right: 3px solid $primary-color;
+
+        .form-title {
+            font-size: $huge-size;
+            font-weight: $heavy-weight;
+            padding-bottom: 8px;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: $grey-border-color;
+            border: none;
+            margin: 24px 0;
+        }
+
+        form {
+            .input-container {
+                display: flex;
+                width: 100%;
+                margin-bottom: 15px;
+
+                .form-icon {
+                    min-width: 50px;
+                    height: 40px;
+                    color: $black-color;
+                    font-size: $normal-size;
+                    padding: 10px;
+                    background: $grey-theme-color;
+                    text-align: center;
+                }
+
+                .input-field {
+                    width: 100%;
+                    padding: 10px;
+                    outline: none;
+                    border: 1px solid $grey-theme-color;
+                    font-size: $normal-size;
+
+                    &:focus {
+                        border: 1px solid $primary-color;
+                    }
+                }
+            }
+
+            .signup-link-container {
+                text-align: center;
+
+                & .signup-link {
+                    width: 100%;
+                    font-size: $normal-size;
+                    color: $primary-color;
+                    text-decoration: underline;
+                    &:visited {
+                        color: $primary-color;
+                    }
+                }
+            }
+
+            .result-message {
+                text-align: center;
+                font-size: $normal-size;
+                padding: 12px;
+
+                &.success {
+                    color: $success-color;
+                }
+
+                &.error {
+                    color: $error-color;
+                }
+            }
+        }
+    }
+}

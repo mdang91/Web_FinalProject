@@ -1,0 +1,97 @@
+@import '../../../shared/styles/variable.scss';
+
+.page-title {
+    padding: 36px;
+}
+
+.seller-dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 36px;
+
+    .home-card {
+        flex: 0.5 0 30%;
+        display: flex;
+        border-radius: 15px;
+        border: 3px solid $grey-border-color;
+        box-shadow: 0 10px 10px 0 $grey-border-color;
+        margin: 24px;
+
+        &:hover {
+            cursor: pointer;
+            border-color: $primary-color;
+            transition: .3s;
+        }
+
+        .card-img-container {
+            max-width: 200px;
+            min-width: 200px;
+            max-height: 200px;
+            min-height: 200px;
+
+            .card-img {
+                width: 100%;
+                height: 100%;
+                border-bottom-left-radius: 15px;
+                border-top-left-radius: 15px;
+            }
+        }
+
+        .card-info-container {
+            width: 100%;
+            padding: 12px;
+            .card-info-row {
+                display: flex;
+                justify-content: space-between;
+
+                .card-info-title {
+                    color: $black-color;
+                    font-size: $huge-size;
+                    font-weight: $heavy-weight;
+                }
+
+                .card-info-price {
+                    color: $primary-color;
+                    font-size: $huge-size;
+                    font-weight: $heavy-weight;
+                }
+
+                .card-info-text {
+                    color: $grey-border-color;
+                    font-size: $large-size;
+                    font-weight: $big-weight;
+                }
+            }
+        }
+    }
+
+    .register-card {
+        flex: 0.5 0 30%;
+        display: flex;
+        max-height: 200px;
+        min-height: 200px;
+        align-items: center;
+        border-radius: 15px;
+        border: 3px dashed $grey-border-color;
+        box-shadow: 0 10px 10px 0 $grey-border-color;
+        margin: 24px;
+
+        &:hover {
+            cursor: pointer;
+            border-style: solid;
+            border-color: $secondary-color;
+            transition: .3s;
+
+            .register-icon {
+                color: $secondary-color;
+            }
+        }
+        
+        .register-icon {
+            width: 100%;
+            height: 100%;
+            color: $grey-border-color;
+        }
+    }
+}
