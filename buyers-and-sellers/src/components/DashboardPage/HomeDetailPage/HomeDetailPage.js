@@ -86,7 +86,7 @@ const HomeDetailPage = () => {
                                 </div>
                                 <div className='detail-row'>
                                     <div className='detail-label'>Floor Plan: &nbsp;</div>
-                                    <div className='detail-value'>{homeData.floorPlan} ㎡</div>
+                                    <div className='detail-value'>{homeData.floorPlan} sqft</div>
                                 </div>
                                 <div className='detail-row'>
                                     <div className='detail-label'>Number of Bedroom: &nbsp;</div>

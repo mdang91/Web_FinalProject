@@ -38,7 +38,7 @@ const BuyerDashboardPage = () => {
                                 <div className='card-info-price'>${data.value}</div>
                             </div>
                             <div className='card-info-row'>
-                                <div className='card-info-text'>{data.floorPlan} ㎡</div>
+                                <div className='card-info-text'>{data.floorPlan} sqft</div>
                                 <div className='card-info-text'>{data.bedroomNo} Bedroom{data.bedroomNo > 1 ? 's' : ''}</div>
                             </div>
                             <div className='card-info-row'>
